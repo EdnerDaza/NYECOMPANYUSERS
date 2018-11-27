@@ -10,9 +10,17 @@ import android.widget.Toast;
 import com.daza.edner.nyecompanyusers.R;
 import com.daza.edner.nyecompanyusers.adapters.UserAdapter;
 import com.daza.edner.nyecompanyusers.interfaces.OnUserClickListener;
+import com.daza.edner.nyecompanyusers.interfaces.UserInterface;
 import com.daza.edner.nyecompanyusers.models.User;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements OnUserClickListener {
 
@@ -26,6 +34,28 @@ public class MainActivity extends AppCompatActivity implements OnUserClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://localhost:8081/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        UserInterface service = retrofit.create(UserInterface.class);
+
+        Call<List<User>> callUsers = service.getUsers();
+
+        callUsers.enqueue(new Callback<List<User>>() {
+            @Override
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                Toast.makeText(MainActivity.this, "BIEN", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<List<User>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "MAL", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         arrayListUsers = getAllUsers();
         recyclerView = findViewById(R.id.RecyclerViewMain);
         layoutManager = new LinearLayoutManager(this);
