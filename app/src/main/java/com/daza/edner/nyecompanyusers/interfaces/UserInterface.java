@@ -18,5 +18,5 @@ public interface UserInterface {
     Call<List<User>> setUsers(@Body User user);
 
     @GET("getUsers")
-    Call<List<User>> getUsers();
+    Call<ArrayList<User>> getUsers();
 }

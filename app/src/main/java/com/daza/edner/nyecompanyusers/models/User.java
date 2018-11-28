@@ -1,18 +1,18 @@
 package com.daza.edner.nyecompanyusers.models;
 
 public class User {
-    private int id;
+    private Long id;
     private String name;
     private String email;
     private String phone;
     private String mobile;
     private String position;
-    private int image;
+    private String image;
 
     public User() {
     }
 
-    public User(int id, String name, String email, String phone, String mobile, String position, int image) {
+    public User(Long id, String name, String email, String phone, String mobile, String position, String image) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -22,11 +22,11 @@ public class User {
         this.image = image;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -70,11 +70,11 @@ public class User {
         this.position = position;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

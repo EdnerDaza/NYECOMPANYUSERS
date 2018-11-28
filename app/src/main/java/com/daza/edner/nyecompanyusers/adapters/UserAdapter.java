@@ -47,18 +47,33 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView imageViewMovie;
-        private TextView textViewMovie;
+        private ImageView imageViewUser;
+        private TextView textViewUserName;
+        private TextView textViewUserEmail;
+        private TextView textViewUserPhone;
+        private TextView textViewUserMobile;
+        private TextView textViewUserPosition;
+        private ImageView imageViewUserFoto;
 
         private ViewHolder (View v){
             super(v);
-            this.imageViewMovie = v.findViewById(R.id.ImageViewCardItem);
-            this.textViewMovie = v.findViewById(R.id.TextViewCardItem);
+            this.imageViewUser = v.findViewById(R.id.ImageViewCardItem);
+            this.textViewUserName = v.findViewById(R.id.TextViewCardItemName);
+            this.textViewUserEmail = v.findViewById(R.id.TextViewCardItemEmail);
+            this.textViewUserPhone = v.findViewById(R.id.TextViewCardItemPhone);
+            this.textViewUserMobile = v.findViewById(R.id.TextViewCardItemMobile);
+            this.textViewUserPosition = v.findViewById(R.id.TextViewCardItemPosition);
+            this.imageViewUserFoto = v.findViewById(R.id.ImageViewCardItemFoto);
         }
 
         private void bind(final User user, final OnUserClickListener listener){
-            this.textViewMovie.setText(user.getName());
-            Picasso.get().load(user.getImage()).fit().into(this.imageViewMovie);
+            this.textViewUserName.setText(user.getName());
+            this.textViewUserEmail.setText(user.getEmail());
+            this.textViewUserMobile.setText(user.getMobile());
+            this.textViewUserPhone.setText(user.getPhone());
+            this.textViewUserPosition.setText(user.getPosition());
+            if(!user.getImage().isEmpty())
+              Picasso.get().load(user.getImage()).fit().into(this.imageViewUserFoto);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

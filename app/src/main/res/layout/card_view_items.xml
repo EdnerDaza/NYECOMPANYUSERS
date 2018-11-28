@@ -3,34 +3,116 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/CardViewItem"
     android:layout_width="match_parent"
-    android:layout_height="240dp"
-    card_view:cardBackgroundColor="#E2E2E2"
-    card_view:cardCornerRadius="10dp"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
     android:clickable="true"
     android:focusable="true"
-    android:layout_margin="5dp"
     android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardBackgroundColor="#E2E2E2"
+    card_view:cardCornerRadius="10dp"
     card_view:cardUseCompatPadding="true">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="@string/imageview"
-        android:scaleType="centerCrop"
         android:id="@+id/ImageViewCardItem"
-        android:background="@drawable/users"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/users"
+        android:contentDescription="@string/imageview"
+        android:alpha="0.3"
+        android:scaleType="centerCrop" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/movie_reel"
-        android:textColor="#000000"
-        android:id="@+id/TextViewCardItem"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/ImageViewCardItemFoto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:contentDescription="@string/imageview"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/users" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TextViewCardItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/user_name"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TextViewCardItemEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/email"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/TextViewCardItemPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/phone"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal"  />
+
+            <TextView
+                android:id="@+id/TextViewCardItemMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/mobile"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal"  />
+
+            <TextView
+                android:id="@+id/TextViewCardItemPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/position"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal"  />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>

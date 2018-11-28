@@ -2,4 +2,13 @@
     <string name="app_name">NYE COMPANY USERS</string>
     <string name="imageview">Image View</string>
     <string name="movie_reel">User Name</string>
+    <string name="position">position</string>
+    <string name="mobile">Mobile</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="user_name">Name</string>
+    <string name="nye_company">NYE COMPANY</string>
+    <string name="register">REGISTER</string>
+    <string name="users">USERS</string>
+    <string name="refresh">Refresh</string>
 </resources>
